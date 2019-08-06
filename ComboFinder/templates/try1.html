@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    input{
+        margin-right: 33px;
+        margin-left: 10px;
+        border-radius: 5px;
+    }
+    #submit_button{
+        margin: 0 auto;
+        margin-top: 20px 
+    }
+    #file_choose{
+        border-radius: 0px;
+        font-style: italic;
+    }
+</style>
+<div class="jumbotron">
+    <h1>Welcome to sign up page!!</h1>
+    <p>Fill out this form!!</p>
+    <form action="{{url_for('try2')}}" enctype = "multipart/form-data" method="POST">
+        <label for="name">Lower Limit: </label>
+        <input type="number" name="first">
+        <label for="last">Upper Limit: </label>
+        <input type="number" name="last">
+        <input type="file" name="file_name" id = "file_choose" autocomplete="off" required><br>
+        <input type="submit" value="Submit" id = "submit_button">
+    </form>
+</div>
+{% endblock %}
